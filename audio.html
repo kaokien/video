@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script src="https://cdn.jwplayer.com/libraries/WW5miSyJ.js"></script>
+
+</head>
+
+<body>
+
+
+
+<!-- First Player -->
+
+<div id="myElement1" style="width:640px; height:360px; margin: 0 auto;"></div>
+
+
+
+
+
+<script type="text/javascript">
+
+// Setup for the first player instance
+
+jwplayer("myElement1").setup({
+
+playlist: [{
+
+file: "https://traffic.libsyn.com/butwhyemspodcast/Ego_is_the_enemy.mp3",
+
+title: 'Basic Video Embed',
+
+description: 'A video with a basic title and description!'
+
+}],
+
+width: 640,
+
+height: 360
+
+});
+
+
+
+
+
+
+// Event handling for debugging (optional)
+
+jwplayer().on('all', function(e) {
+
+console.log(e);
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>
+
