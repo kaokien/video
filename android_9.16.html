@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jwplayer.com/libraries/WW5miSyJ.js"></script>
+    <script>
+      // Override user agent for Android devices
+      if (/Android/i.test(navigator.userAgent)) {
+        Object.defineProperty(navigator, "userAgent", {
+          value:
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+          configurable: false,
+          writable: false,
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="myElement1"></div>
+
+    <script type="text/javascript">
+      // Setup player after UA modification
+      jwplayer("myElement1").setup({
+        playlist: [
+          {
+            file: "https://cdn.jwplayer.com/manifests/CB2IrOSO.m3u8",
+            title: "Basic Video Embed",
+            description: "A video with a basic title and description!",
+          },
+        ],
+        width: 360,
+        height: 640,
+      });
+
+      // Optional: Verify user agent
+      console.log("Effective User Agent:", navigator.userAgent);
+    </script>
+  </body>
+</html>
